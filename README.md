@@ -6,17 +6,60 @@ Link of the full paper: [here](https://lia.epfl.ch/wp-content/uploads/publicatio
 
 Stay tuned for the code!
 
+# Data
+
+You can download the hotel dataset [here](https://lia.epfl.ch/Datasets/hotel_reviews.zip). It contains the train, dev, test sets, and the embeddings trained on [HotelRec](http://lia.epfl.ch/Datasets/Full_HotelRec.zip).
+
+Each sample contains the five normalized ratings, the text, and the tokenized words.
+
+```
+{
+  "aspects": [
+    1.0, // Aspect Service
+    1.0, // Aspect Cleanliness
+    1.0, // Aspect Value
+    0.8, // Aspect Location
+    0.8  // Aspect Rooms
+  ],
+  "text": "We were on a road trip and just picking a hotel where we happened to be for the evening. We were surprised that at 5:00 on a Tuesday, there would be no rooms available at all of the \"better\" hotels in the area. The receptionist at Comfort Inn suggested we try the Quality Inn because she had just found out they had rooms. From the outside, this hotel is a disaster in looks and location. The manager told us they had just remodeled a few months ago and she was sure we would like the room. She was right. The bed was comfortable, the bathroom was well appointed and clean and the soundproofing was adequate. We had a lovely stay and left refreshed. We can recommend this hotel if you want a good night's sleep and don't need to impress anyone.",
+  "words": [
+    "we",
+    "were",
+    ...
+    "to",
+    "impress",
+    "anyone"
+  ]
+}
+```
+
+For the Beer dataset, you can download the small de-correlated version and the embedding [here](https://people.csail.mit.edu/taolei/beer/). Please contact the author of the dataset, Prof. McAuley, for the full set (which has been removed, see [here](https://snap.stanford.edu/data/web-BeerAdvocate.html)).
+
 # Citation
 
-Please cite our paper (temporary BibTex) if you find the code or data helpful, thanks!
+Please cite our papers if you find the code (first) or data (second) helpful, thanks!
 
 ```
 @InProceedings{antognini2021,
   author    = {Antognini, Diego  and  Musat, Claudiu and Faltings, Boi},
   title     = {Multi-Dimensional Explanation of Target Variables from Documents},
   volume    = {35}, 
-  journal   = {Proceedings of the AAAI Conference on Artificial Intelligence}, 
+  journal   = {Proceedings of the 35th AAAI Conference on Artificial Intelligence (AAAI)},
+  month     = {February},
   year      = {2021},
-  url       = {https://bit.ly/2CIj2Z8}
+  url       = {https://www.aaai.org/AAAI21Papers/AAAI-9984.AntogniniD.pdf}
+}
+
+@InProceedings{antognini-faltings:2020:LREC1,
+  author    = {Antognini, Diego  and  Faltings, Boi},
+  title     = {HotelRec: a Novel Very Large-Scale Hotel Recommendation Dataset},
+  booktitle      = {Proceedings of The 12th Language Resources and Evaluation Conference},
+  month          = {May},
+  year           = {2020},
+  address        = {Marseille, France},
+  publisher      = {European Language Resources Association},
+  pages     = {4917--4923},
+  abstract  = {Today, recommender systems are an inevitable part of everyone's daily digital routine and are present on most internet platforms. State-of-the-art deep learning-based models require a large number of data to achieve their best performance. Many datasets fulfilling this criterion have been proposed for multiple domains, such as Amazon products, restaurants, or beers. However, works and datasets in the hotel domain are limited: the largest hotel review dataset is below the million samples. Additionally, the hotel domain suffers from a higher data sparsity than traditional recommendation datasets and therefore, traditional collaborative-filtering approaches cannot be applied to such data. In this paper, we propose HotelRec, a very large-scale hotel recommendation dataset, based on TripAdvisor, containing 50 million reviews. To the best of our knowledge, HotelRec is the largest publicly available dataset in the hotel domain (50M versus 0.9M) and additionally, the largest recommendation dataset in a single domain and with textual reviews (50M versus 22M). We release HotelRec for further research: https://github.com/Diego999/HotelRec.},
+  url       = {https://www.aclweb.org/anthology/2020.lrec-1.605}
 }
 ```
